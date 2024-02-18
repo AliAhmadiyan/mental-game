@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array game</title>
+    <link rel="stylesheet" href="bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+    <script src="jquery-3.7.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="d-flex justify-content-end m-3">
+        <div class="scoreBox d-flex flex-row-reverse gap-3">
+            <p id="score" class="d-flex justify-content-center align-items-center fs-5 fw-bold bg-info text-white rounded-4">امتیاز: 0</p>
+            <button onclick="deleteImg()" id='delButton' class="btn btn-danger text-white px-4 rounded-4">
+                <i class="fa fa-trash"></i>
+            </button>
+            <button class="btn btn-success rounded-4" id="helpButton" onclick="help()">کمک: 1</button>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-success d-none" id="modal">
+        <h1 id="modalText" class="text-white">آفرین برنده شدی</h1>
+        <button class="d-block mx-auto btn btn-warning" id="modalButton" onclick="continueGame()">ادامه بازی</button>
+    </div>
+
+    <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="firstArrayImg" class="d-block mx-auto rounded-3 my-3">
+
+    <button id="start" class="btn btn-info d-block px-4 mx-auto" onclick="firstShow(0)">شروع</button>
+
+    <div id="imgContainer" class="imgContainer d-flex justify-content-center d-none">
+        <div class="rounded-3">
+            <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="block0" class="rounded-3" >
+        </div>
+        <div class="rounded-3">
+            <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="block1" class="rounded-3" onclick="selectedImgShowed()">
+        </div>
+        <div class="rounded-3">
+            <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="block2" class="rounded-3" onclick="selectedImgShowed()">
+        </div>
+        <div class="rounded-3">
+            <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="block3" class="rounded-3" onclick="selectedImgShowed()">
+        </div>
+        <div class="rounded-3">
+            <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="block4" class="rounded-3" onclick="selectedImgShowed()">
+        </div>
+    </div>
+
+    <div class="imgSelection d-flex justify-content-center d-none" id="imgSelection">
+        <button class="imgSelection1 rounded-3" onclick="imgSelected(1)"></button>
+        <button class="imgSelection2 rounded-3" onclick="imgSelected(2)"></button>
+        <button class="imgSelection3 rounded-3" onclick="imgSelected(3)"></button>
+        <button class="imgSelection4 rounded-3" onclick="imgSelected(4)"></button>
+        <button class="imgSelection5 rounded-3" onclick="imgSelected(5)"></button>
+    </div>
+
+    <button onclick="compare()" class="btn btn-info px-5 d-none" id="compareButton">تایید</button>
+    
+</body>
+</html>

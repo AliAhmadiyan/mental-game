@@ -11,21 +11,15 @@ function randomImg(min, max) {
 
 const arr = [];
 
-function randomImg2(min,max) {
+function randomImg2() {
     let num = randomImg(0,4);
     let lastOne = arr[arr.length-1];
-    let num2 = randomImg(0,4);
-    arr.push(num2);
-    if(num2 != lastOne){
-        arr.push(num2)
-        return num2;
+    while (num === lastOne) {
+        num = randomImg(0,4);
+        lastOne = arr[arr.length-1]
     }
-    if(lastOne > min && lastOne < max)
-        return num;
-    if(lastOne == min)
-        return max
-    if(lastOne == max)
-        return min
+    arr.push(num);
+    return num;
 }
 
 
@@ -40,7 +34,7 @@ for (let i = 1; i < 6; i++) {
 function firstShow(i) {
     let slider = setInterval(function () {
         document.getElementById('start').className = 'd-none';
-        let rand = randomImg2(0,4);
+        let rand = randomImg2();
         $('#firstArrayImg').attr('src', `${imagesArray[rand]}`);
         firstArrayImg.push(`images/${rand + 1}.jpg`);
         i++;

@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(255, 149, 0);
+    background-color: #00000D;
     
 }
 
@@ -84,4 +84,36 @@ body {
     text-align: center;
     margin-bottom: 90px;
     font-weight: bold;
+}
+
+#redBluredBox {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35%;
+    height: 35%;
+    background-color: red;
+    filter: blur(150px);
+    z-index: -2;
+}
+
+#blueBluredBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 35%;
+    background-color: blue;
+    filter: blur(150px);
+    z-index: -2;
+}
+
+#blackCoverBox {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000D;
+    opacity: 0.5;
+    z-index: -1;
 }

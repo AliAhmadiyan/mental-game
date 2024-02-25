@@ -1,64 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Array game</title>
-    <link rel="stylesheet" href="bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="jquery-3.7.0.min.js"></script>
     <script src="script.js" defer></script>
-</head>
-<body>
-    <div class="d-flex justify-content-end m-3">
+  </head>
+  <body>
+      <div class="d-flex justify-content-between flex-row-reverse mt-3 w-100">
+    <!-- top right buttons -->
+      <div class="d-flex ">
         <div class="scoreBox d-flex flex-row-reverse gap-3">
-            <p id="score" class="d-flex justify-content-center align-items-center fs-5 fw-bold bg-info text-white rounded-4">امتیاز: 0</p>
-            <button onclick="deleteImg()" id='delButton' class="btn btn-danger text-white px-4 rounded-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                  </svg>
-            </button>
-            <button class="btn btn-success rounded-4" id="helpButton" onclick="help()">کمک: 1</button>
+          <p
+            id="score"
+            class="d-flex justify-content-center align-items-center fs-5 fw-bold bg-info text-white rounded-4"
+          >
+            امتیاز: 0
+          </p>
+          <button
+            onclick="deleteImg()"
+            id="delButton"
+            class="btn btn-danger text-white px-4 rounded-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="currentColor"
+              class="bi bi-trash"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+              />
+              <path
+                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+              />
+            </svg>
+          </button>
+          <button
+            class="btn btn-success rounded-4"
+            id="helpButton"
+            onclick="help()"
+          >
+            کمک: 1
+          </button>
         </div>
+      </div>
+      <!-- hearts -->
+      <div class="d-flex gap-2 me-5 pe-3" id="hearts">
+        <svg id="firstHeart" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+          </svg>
+      </div>
+      <p>somthing will be added here soon</p>
     </div>
 
     <div class="container-fluid bg-success d-none" id="modal">
-        <h1 id="modalText" class="text-white">آفرین برنده شدی</h1>
-        <button class="d-block mx-auto btn btn-warning" id="modalButton" onclick="continueGame()">ادامه بازی</button>
+      <h1 id="modalText" class="text-white">آفرین برنده شدی</h1>
+      <button
+        class="d-block mx-auto btn btn-warning"
+        id="modalButton"
+        onclick="continueGame()"
+      >
+        ادامه بازی
+      </button>
     </div>
 
-    <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="firstArrayImg" class="d-block mx-auto rounded-3 my-3">
+    <img
+      src="images/vecteezy_picture-image-icon_22207263_382.png"
+      alt=""
+      id="firstArrayImg"
+      class="d-block mx-auto rounded-3 my-3"
+    />
 
-    <button id="start" class="btn btn-info d-block px-4 mx-auto" onclick="firstShow(0)">شروع</button>
+    <button
+      id="start"
+      class="btn btn-primary d-block px-4 mx-auto"
+      onclick="firstShow(0)"
+    >
+      شروع
+    </button>
 
-    <div id="imgContainer" class="imgContainer d-flex justify-content-center d-none">
-        <div class="rounded-3">
-            <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="block0" class="rounded-3" >
-        </div>
-        <div class="rounded-3">
-            <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="block1" class="rounded-3" onclick="selectedImgShowed()">
-        </div>
-        <div class="rounded-3">
-            <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="block2" class="rounded-3" onclick="selectedImgShowed()">
-        </div>
-        <div class="rounded-3">
-            <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="block3" class="rounded-3" onclick="selectedImgShowed()">
-        </div>
-        <div class="rounded-3">
-            <img src="images/vecteezy_picture-image-icon_22207263_382.png" alt="" id="block4" class="rounded-3" onclick="selectedImgShowed()">
-        </div>
+    <div
+      id="imgContainer"
+      class="imgContainer d-flex justify-content-center d-none"
+    >
+      <div class="rounded-3">
+        <img
+          src="images/vecteezy_picture-image-icon_22207263_382.png"
+          alt=""
+          id="block0"
+          class="rounded-3"
+        />
+      </div>
+      <div class="rounded-3">
+        <img
+          src="images/vecteezy_picture-image-icon_22207263_382.png"
+          alt=""
+          id="block1"
+          class="rounded-3"
+          onclick="selectedImgShowed()"
+        />
+      </div>
+      <div class="rounded-3">
+        <img
+          src="images/vecteezy_picture-image-icon_22207263_382.png"
+          alt=""
+          id="block2"
+          class="rounded-3"
+          onclick="selectedImgShowed()"
+        />
+      </div>
+      <div class="rounded-3">
+        <img
+          src="images/vecteezy_picture-image-icon_22207263_382.png"
+          alt=""
+          id="block3"
+          class="rounded-3"
+          onclick="selectedImgShowed()"
+        />
+      </div>
+      <div class="rounded-3">
+        <img
+          src="images/vecteezy_picture-image-icon_22207263_382.png"
+          alt=""
+          id="block4"
+          class="rounded-3"
+          onclick="selectedImgShowed()"
+        />
+      </div>
     </div>
 
-    <div class="imgSelection d-flex justify-content-center d-none" id="imgSelection">
-        <button class="imgSelection1 rounded-3" onclick="imgSelected(1)"></button>
-        <button class="imgSelection2 rounded-3" onclick="imgSelected(2)"></button>
-        <button class="imgSelection3 rounded-3" onclick="imgSelected(3)"></button>
-        <button class="imgSelection4 rounded-3" onclick="imgSelected(4)"></button>
-        <button class="imgSelection5 rounded-3" onclick="imgSelected(5)"></button>
+    <div
+      class="imgSelection d-flex justify-content-center d-none"
+      id="imgSelection"
+    >
+      <button class="imgSelection1 rounded-3" onclick="imgSelected(1)"></button>
+      <button class="imgSelection2 rounded-3" onclick="imgSelected(2)"></button>
+      <button class="imgSelection3 rounded-3" onclick="imgSelected(3)"></button>
+      <button class="imgSelection4 rounded-3" onclick="imgSelected(4)"></button>
+      <button class="imgSelection5 rounded-3" onclick="imgSelected(5)"></button>
     </div>
 
-    <button onclick="compare()" class="btn btn-info px-5 d-none" id="compareButton">تایید</button>
-    
-</body>
+    <button
+      onclick="compare()"
+      class="btn btn-info px-5 d-none"
+      id="compareButton"
+    >
+      تایید
+    </button>
+
+    <div id="redBluredBox"></div>
+    <div id="blueBluredBox"></div>
+    <div id="blackCoverBox"></div>
+  </body>
 </html>

@@ -2,6 +2,7 @@ let i = 0;
 let index = 0;
 let rand = randomImg(0,4);
 let score = 0;
+let heart = 3;
 
 
 function randomImg(min, max) {
@@ -102,12 +103,17 @@ function compare() {
             }
     } else {
         document.getElementById('modal').className += 'd-block bg-danger';
-        $('#modalText').html('...باختی که');
+        $('#modalText').html('...درست نبود که');
         document.getElementById('modalButton').className =
          'd-block mx-auto btn btn-warning';
         selectedImg.length = 0;
-        score = 0;
-        $('#score').html(`امتیاز: ${score}`);
+        heart--;
+        heartNum();
+        if (heart === 0) {
+            score = 0;
+            $('#score').html(`امتیاز: ${score}`);
+            $('#modalText').html('...باختی که');
+        }
     }
     document.getElementById('imgContainer').className = 'd-none';
     document.getElementById('imgSelection').className = 'd-none';
@@ -151,5 +157,12 @@ function help() {
         document.getElementById(`block${index}`).style.opacity = 0.5;
         helpCount--;
         document.getElementById('helpButton').innerHTML = `کمک: ${helpCount}`
+    }
+}
+
+function heartNum() {
+    let redHearts = document.getElementById("hearts");
+    if(heart < 3) {
+        redHearts.removeChild(redHearts.firstElementChild);
     }
 }
